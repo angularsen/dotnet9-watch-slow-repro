@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServer9HotReloadRepro", "BlazorServer9HotReloadRepro\BlazorServer9HotReloadRepro.csproj", "{89C44CD5-BA69-4FB6-B596-C86538B6B5DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServer8HotReloadRepro", "BlazorServer8HotReloadRepro\BlazorServer8HotReloadRepro.csproj", "{7AB44972-2890-4515-AA71-36CD16988E27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Files", "_Files", "{EE056D83-131A-4F25-AC55-35A7A7728C9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor8", "Blazor8", "{FE484623-F6A7-4D51-A92F-6BBE731EC594}"
+	ProjectSection(SolutionItems) = preProject
+		BlazorServer8HotReloadRepro\global.json = BlazorServer8HotReloadRepro\global.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89C44CD5-BA69-4FB6-B596-C86538B6B5DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C44CD5-BA69-4FB6-B596-C86538B6B5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C44CD5-BA69-4FB6-B596-C86538B6B5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C44CD5-BA69-4FB6-B596-C86538B6B5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB44972-2890-4515-AA71-36CD16988E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB44972-2890-4515-AA71-36CD16988E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB44972-2890-4515-AA71-36CD16988E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB44972-2890-4515-AA71-36CD16988E27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE484623-F6A7-4D51-A92F-6BBE731EC594} = {EE056D83-131A-4F25-AC55-35A7A7728C9B}
+	EndGlobalSection
+EndGlobal
