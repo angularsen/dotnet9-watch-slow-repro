@@ -8,24 +8,26 @@ Related:
 Have tried `9.0.202` and `9.0.300-preview.0.25174.3` with no success.
 
 ## To run this sample
-Run both projects:
+Run both projects in two separate shells:
 ```sh
-dotnet watch --project BlazorServer8HotReloadRepro
+dotnet watch --verbose --project BlazorServer8HotReloadRepro
 ```
 
 ```sh
-dotnet watch --project BlazorServer9HotReloadRepro
+dotnet watch --verbose --project BlazorServer9HotReloadRepro
 ```
 
-Wait for browser to launch for each project.
-Edit `Components/Pages/Home.razor` in either project, and change the title text or something trivial.
+- Wait for browser to launch for each project.
+- Edit `Components/Pages/Home.razor` in either project, and change the title text or something trivial.
+- Observe in console output that `OnInitializedAsync` is run twice on net9, once on net8
 
 
 ## Observations
 A couple of observations in these template apps:
 - `dotnet watch --verbose` produces a very long list of files on every change in net9, no such details shown in net8
 - `OnInitializedAsync` for `Home.razor` is run twice in net9, once in net8
-- Simulating a slow `OnInitializedAsync` with Task.Delay, delays the hot reload
+- Simulating a slow `OnInitializedAsync` with Task.Delay, delays the hot reload on both
+- TODO Reproduce a "full page load" as seen in our large, proprietary Blazor app
 
 Observations in our proprietary, large Blazor Server code base with many projects, code and components:
 - On net9, hot reload incurs what seems like a full page load. A new circuit is started, services are created and data is initialized. This is slow in our app, but this page load did not happen in net8 hot reload.
