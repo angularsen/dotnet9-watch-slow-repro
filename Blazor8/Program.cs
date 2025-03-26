@@ -1,3 +1,4 @@
+using Blazor8;
 using Blazor8.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddScoped<MyScopedService>();
 
 var app = builder.Build();
 

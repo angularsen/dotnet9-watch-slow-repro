@@ -6,11 +6,11 @@ public class MyScopedService : IDisposable
 {
     public MyScopedService()
     {
-        Console.WriteLine($"{Activity.Current?.Id} MyScopedService.ctor()");
+        Console.WriteLine($"Blazor9 {Activity.Current?.Id} MyScopedService.ctor()");
     }
 
     public void Dispose()
     {
-        Console.WriteLine($"{Activity.Current?.Id} MyScopedService.Dispose()");
+        Console.WriteLine($"Blazor9 {Activity.Current?.Id} MyScopedService.Dispose()");
     }
 }

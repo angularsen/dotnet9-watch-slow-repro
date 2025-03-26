@@ -4,7 +4,7 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Blazor Server 9 hot reload repro #6</h1>
+<h1>Blazor Server 9 hot reload repro #2</h1>
 
 Increment the number above to trigger hot reload.
 
@@ -13,8 +13,8 @@ Increment the number above to trigger hot reload.
     {
         await base.OnInitializedAsync();
         var sw = Stopwatch.StartNew();
-        Console.WriteLine($"{Activity.Current?.Id} OnInitializedAsync begin");
+        Console.WriteLine($"Blazor9 {Activity.Current?.Id} OnInitializedAsync begin");
         await Task.Delay(3000);
-        Console.WriteLine($"{Activity.Current?.Id} OnInitializedAsync end after {sw.ElapsedMilliseconds} ms");
+        Console.WriteLine($"Blazor9 {Activity.Current?.Id} OnInitializedAsync end after {sw.ElapsedMilliseconds} ms");
     }
 }

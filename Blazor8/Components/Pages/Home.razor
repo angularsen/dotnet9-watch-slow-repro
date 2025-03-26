@@ -1,8 +1,10 @@
 ﻿@page "/"
+@using System.Diagnostics
+@inject MyScopedService _myScopedService
 
 <PageTitle>Home</PageTitle>
 
-<h1>Blazor Server 8 hot reload repro #8</h1>
+<h1>Blazor Server 8 hot reload repro #1</h1>
 
 Increment the number above to trigger hot reload.
 
@@ -11,8 +13,9 @@ Increment the number above to trigger hot reload.
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        Console.WriteLine("OnInitializedAsync begin");
+        var sw = Stopwatch.StartNew();
+        Console.WriteLine($"Blazor8 {Activity.Current?.Id} OnInitializedAsync begin");
         await Task.Delay(3000);
-        Console.WriteLine("OnInitializedAsync end");
+        Console.WriteLine($"Blazor8 {Activity.Current?.Id} OnInitializedAsync end after {sw.ElapsedMilliseconds} ms");
     }
 }
