@@ -11,10 +11,10 @@ Increment the number above to trigger hot reload.
 @code {
     protected override async Task OnInitializedAsync()
     {
-        await base.OnInitializedAsync();
         var sw = Stopwatch.StartNew();
         Console.WriteLine($"Blazor9 {Activity.Current?.Id} OnInitializedAsync begin");
-        await Task.Delay(3000);
+        await base.OnInitializedAsync();
+        // await Task.Delay(3000);
         Console.WriteLine($"Blazor9 {Activity.Current?.Id} OnInitializedAsync end after {sw.ElapsedMilliseconds} ms");
     }
 }
