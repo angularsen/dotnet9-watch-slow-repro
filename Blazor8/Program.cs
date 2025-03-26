@@ -1,4 +1,4 @@
-using BlazorServer8HotReloadRepro.Components;
+using Blazor8.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

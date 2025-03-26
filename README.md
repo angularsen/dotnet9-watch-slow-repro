@@ -16,11 +16,11 @@ In our app, these versions also do a special page reload upon hot reload. Detail
 ## To run this sample
 Run both projects in two separate shells:
 ```sh
-dotnet watch --verbose --project BlazorServer8HotReloadRepro
+dotnet watch --verbose --project Blazor8
 ```
 
 ```sh
-dotnet watch --verbose --project BlazorServer9HotReloadRepro
+dotnet watch --verbose --project Blazor9
 ```
 
 - Wait for browser to launch for each project.

@@ -1,0 +1,20 @@
+﻿@page "/"
+@using System.Diagnostics
+@inject MyScopedService _myScopedService
+
+<PageTitle>Home</PageTitle>
+
+<h1>Blazor Server 9 hot reload repro #6</h1>
+
+Increment the number above to trigger hot reload.
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        var sw = Stopwatch.StartNew();
+        Console.WriteLine($"{Activity.Current?.Id} OnInitializedAsync begin");
+        await Task.Delay(3000);
+        Console.WriteLine($"{Activity.Current?.Id} OnInitializedAsync end after {sw.ElapsedMilliseconds} ms");
+    }
+}
