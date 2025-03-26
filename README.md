@@ -4,9 +4,8 @@ Related:
 - [dotnet 9, "dotnet watch" is really bad in Blazor Server · Issue \#45810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/45810)
 
 ## Problem
-1. `dotnet watch` is slower on net9 than net8, in particular the _first_ change can take 10-20 seconds vs a few seconds for a trivial change to `.razor` files in Blazor. (1)
-2. `OnInitializedAsync` is run twice on hot reload in net9, but only once in net8
-3. Blazor seems to do a page reload after hot reload in our app, but have not yet been able to create a repro of this behavior in these sample apps. See details below.
+1. `dotnet watch` is slower on net9 than net8, in particular the _first_ change can take 10-20 seconds vs a few seconds for a trivial change to `.razor` files in our large Blazor Server app. (1)
+2. Blazor seems to do a page reload after hot reload in our app, but have not yet been able to create a repro of this behavior in these sample apps. See details below.
 
 (1)
 In 9.0.2 SDK release, the hot reload was 10-20x slower for every change, but in 9.0.3 SDK release only the first hot reload is 10-20x slow and subsequent changes are fast.<br>
@@ -25,11 +24,8 @@ dotnet watch --verbose --project Blazor9
 
 - Wait for browser to launch for each project.
 - Edit `Components/Pages/Home.razor` in either project, and change the title text or something trivial.
-- Observe in console output that `OnInitializedAsync` is run twice on net9, once on net8
-
 
 ## Observations in template apps
-- `OnInitializedAsync` for `Home.razor` is run twice in net9, once in net8
 - Simulating a slow `OnInitializedAsync` with Task.Delay, delays the hot reload on both (probably by design)
 
 ## Observations in our large Blazor Server app
