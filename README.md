@@ -2,6 +2,7 @@
 Related:
 - [hot reload takes too much time · Issue \#47179 · dotnet/sdk](https://github.com/dotnet/sdk/issues/47179)
 - [dotnet 9, "dotnet watch" is really bad in Blazor Server · Issue \#45810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/45810)
+- [Hot reload extra slow for changes in Rider due to backup files with ~ suffix · Issue \#47912 · dotnet/sdk](https://github.com/dotnet/sdk/issues/47912)
 
 ## Problem
 1. `dotnet watch` is slower on net9 than net8, in particular the _first_ change can take 10-20 seconds vs a few seconds for a trivial change to `.razor` files in our large Blazor Server app. (1)
